@@ -37,13 +37,18 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Greeting(name: String, parameterFun: () -> Unit) {
+fun Greeting(
+    name: String,
+    //parameterFun: () -> Unit
+) {
 
     Column (
     ){
         Box (){
             Text(
-                modifier = Modifier.clickable { parameterFun()  },
+                modifier = Modifier.clickable {
+                   // parameterFun()
+                                              },
                 text = "Hello $name!",
                 fontSize = 40.sp,
                 color = Color.Red
@@ -59,7 +64,9 @@ fun Greeting(name: String, parameterFun: () -> Unit) {
 
         Row() {
             Text(
-                modifier = Modifier.clickable { parameterFun()  },
+                modifier = Modifier.clickable {
+                    //parameterFun()
+                                              },
                 text = "Hello $name!",
                 fontSize = 40.sp,
                 color = Color.Red
@@ -115,15 +122,13 @@ fun BoxExample() {
 @Preview(showSystemUi = true)
 @Composable
 fun GreetingPreview() {
-//    Greeting(
-//        name = "Vaibhav") {
-//        myFun(name = "Vaibhav", age = 22)
-//    }
-    BoxExample()
+    Greeting(name = "Vaibhav")
 }
 
 fun myFun(name: String, age: Int) {
     println("My name is $name and my age is $age")
 }
+
+
 
 
