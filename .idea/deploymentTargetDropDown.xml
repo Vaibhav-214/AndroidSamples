@@ -2,19 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="MeditationUIPreview">
+        <State />
+      </entry>
       <entry key="Section1Preview">
+        <State />
+      </entry>
+      <entry key="StateExamplePreview">
         <State />
       </entry>
       <entry key="TestPreview">
         <State />
       </entry>
       <entry key="TextViewPreview">
-        <State />
-      </entry>
-      <entry key="TtKt">
-        <State />
-      </entry>
-      <entry key="TutorialKt">
         <State />
       </entry>
       <entry key="app">
