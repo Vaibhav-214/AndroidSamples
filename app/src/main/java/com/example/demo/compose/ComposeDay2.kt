@@ -12,6 +12,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AssistChip
@@ -78,25 +81,63 @@ fun Section1() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Section2() {
-    Row (
+//    Row (
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .padding(vertical = 10.dp),
+//        horizontalArrangement = Arrangement.SpaceEvenly
+//    ){
+//        AssistChip(
+//            colors = AssistChipDefaults.assistChipColors(containerColor = ButtonBlue),
+//            modifier = Modifier.height(50.dp),
+//            onClick = { /*TODO*/ },
+//            label = {
+//                Text(
+//                text = "Sound Sleep",
+//                color = Color.White
+//                ) },
+//            border = AssistChipDefaults.assistChipBorder(borderColor = ButtonBlue)
+//        )
+//
+//        AssistChip(
+//            colors = AssistChipDefaults.assistChipColors(containerColor = ButtonBlue),
+//
+//            modifier = Modifier.height(50.dp),
+//            border = AssistChipDefaults.assistChipBorder(borderColor = ButtonBlue),
+//
+//            onClick = { /*TODO*/ },
+//            label = {
+//                Text(
+//                text = "Insomnia",
+//                color = Color.White
+//                )
+//            }
+//        )
+//
+//        AssistChip(
+//            modifier = Modifier.height(50.dp),
+//            colors = AssistChipDefaults.assistChipColors(containerColor = ButtonBlue),
+//            border = AssistChipDefaults.assistChipBorder(borderColor = ButtonBlue),
+//            onClick = { /*TODO*/ },
+//            label = {
+//                Text(
+//                    text = "Depression",
+//                    color = Color.White
+//
+//                    ) }
+//        )
+//    }
+
+    LazyRow (
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 10.dp),
-        horizontalArrangement = Arrangement.SpaceEvenly
+        horizontalArrangement = Arrangement.spacedBy(20.dp)
     ){
-        AssistChip(
-            colors = AssistChipDefaults.assistChipColors(containerColor = ButtonBlue),
-            modifier = Modifier.height(50.dp),
-            onClick = { /*TODO*/ },
-            label = {
-                Text(
-                text = "Sound Sleep",
-                color = Color.White
-                ) },
-            border = AssistChipDefaults.assistChipBorder(borderColor = ButtonBlue)
-        )
+        val list  = listOf<String>("Sound Sleep", "Insomnia", "Depression", "College life")
 
-        AssistChip(
+        items(list) {item ->
+            AssistChip(
             colors = AssistChipDefaults.assistChipColors(containerColor = ButtonBlue),
 
             modifier = Modifier.height(50.dp),
@@ -105,25 +146,25 @@ fun Section2() {
             onClick = { /*TODO*/ },
             label = {
                 Text(
-                text = "Insomnia",
+                text = item,
                 color = Color.White
                 )
             }
-        )
+      )
 
-        AssistChip(
-            modifier = Modifier.height(50.dp),
-            colors = AssistChipDefaults.assistChipColors(containerColor = ButtonBlue),
-            border = AssistChipDefaults.assistChipBorder(borderColor = ButtonBlue),
-            onClick = { /*TODO*/ },
-            label = {
-                Text(
-                    text = "Depression",
-                    color = Color.White
+        }
 
-                    ) }
-        )
     }
+
+
+
+    /*
+    Similarly we can use LazyColumn
+
+    LazyColumn {
+
+    }
+     */
 }
 
 @Composable
